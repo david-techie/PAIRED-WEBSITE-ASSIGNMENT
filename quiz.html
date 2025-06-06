@@ -1,60 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML quiz</title>
+  <meta charset="UTF-8">
+  <title>HTML fun quiz</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>HTML Quiz</h2>
-  <form id="quizForm">
-    <p>1. What does HTML stand for?</p>
-    <input type="radio" name="q1" value="a">Hyperlinks and Text Markup Language<br>
-    <input type="radio" name="q1" value="b">Home Tool Markup Language<br>
-    <input type="radio" name="q1" value="c">Hyper Text Markup Language<br>
-    <input type="radio" name="q1" value="d">Hyperlinking Text Management Language<br>
+  <h1>HTML quiz</h1>
+  <p id="timer">Time left: 60s</p>
 
-    <br>
-    <button type="button" onclick="checkAnswers()">Submit</button>
+  <form id="quiz-form">
+    <label for="q1">1.What's the full meaning of HTML  ?</label><br>
+    <input type="text" id="q1" name="q1"><br><br>
+
+    <label for="q2">2. A HTML document is divided into how many parts?</label><br>
+    <select id="q2" name="q2">
+      <option value="">--Select--</option>
+      <option value="two parts">two parts</option>
+      <option value="three parts">three parts</option>
+      <option value="four parts">four parts</option>
+      <option value="five parts">five parts</option>
+    </select><br><br>
+
+    <label for="q3">3. What is HTML's role in web development?</label><br>
+    <input type="text" id="q3" name="q3"><br><br>
+
+    <label for="q4">2. A HTML document is divided into how many parts?</label><br>
+    <select id="q4" name="q4">
+      <option value="">--Select--</option>
+      <option value="two parts">two parts</option>
+      <option value="three parts">three parts</option>
+      <option value="four parts">four parts</option>
+      <option value="five parts">five parts</option>
+    </select><br><br>
+      
+    <label for="q4">2. _ should describe the page's content succinctly and accurately</label><br>
+    <select id="q4" name="q4">
+      <option value="">--Select--</option>
+      <option value="HTNL TAG">HTML TAG</option>
+      <option value="HEADER TAGS">HEADER TAGS</option>
+      <option value="TITLE TAG">TITLE TAG</option>
+      <option value="PARAGRAPH TAG">PARAGRAPH TAG</option>
+    </select><br><br>
+      
+    <input type="submit" value="Submit">
   </form>
 
-  <p id="result"></p>
+  <div id="result" class="hidden"></div>
+  <button id="retry-btn" class="hidden">Try Again</button>
 
-  <script>
-    function checkAnswers() {
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      let score = 0;
-      if (q1 && q1.value === 'c') {
-        score++;
-      }
-      document.getElementById('result').innerText = "You scored " + score + "/1";
-    }
-  </script>
-
-   <h2>HTML Quiz</h2>
-  <form id="quizForm">
-    <p>1. What does HTML stand for?</p>
-    <input type="radio" name="q1" value="a">Hyperlinks and Text Markup Language<br>
-    <input type="radio" name="q1" value="b">Home Tool Markup Language<br>
-    <input type="radio" name="q1" value="c">Hyper Text Markup Language<br>
-    <input type="radio" name="q1" value="d">Hyperlinking Text Management Language<br>
-
-    <br>
-    <button type="button" onclick="checkAnswers()">Submit</button>
-  </form>
-
-  <p id="result"></p>
-
-  <script>
-    function checkAnswers() {
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      let score = 0;
-      if (q1 && q1.value === 'c') {
-        score++;
-      }
-      document.getElementById('result').innerText = "You scored " + score + "/1";
-    }
-  </script>
-
+  <!-- Confetti (Optional) -->
+  <script src="confetti.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
