@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML quiz</title>
+</head>
+<body>
+    <h2>HTML Quiz</h2>
+  <form id="quizForm">
+    <p>1. What does HTML stand for?</p>
+    <input type="radio" name="q1" value="a">Hyperlinks and Text Markup Language<br>
+    <input type="radio" name="q1" value="b">Home Tool Markup Language<br>
+    <input type="radio" name="q1" value="c">Hyper Text Markup Language<br>
+    <input type="radio" name="q1" value="d">Hyperlinking Text Management Language<br>
+
+    <br>
+    <button type="button" onclick="checkAnswers()">Submit</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswers() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      let score = 0;
+      if (q1 && q1.value === 'c') {
+        score++;
+      }
+      document.getElementById('result').innerText = "You scored " + score + "/1";
+    }
+  </script>
+
+   <h2>HTML Quiz</h2>
+  <form id="quizForm">
+    <p>1. What does HTML stand for?</p>
+    <input type="radio" name="q1" value="a">Hyperlinks and Text Markup Language<br>
+    <input type="radio" name="q1" value="b">Home Tool Markup Language<br>
+    <input type="radio" name="q1" value="c">Hyper Text Markup Language<br>
+    <input type="radio" name="q1" value="d">Hyperlinking Text Management Language<br>
+
+    <br>
+    <button type="button" onclick="checkAnswers()">Submit</button>
+  </form>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswers() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      let score = 0;
+      if (q1 && q1.value === 'c') {
+        score++;
+      }
+      document.getElementById('result').innerText = "You scored " + score + "/1";
+    }
+  </script>
+
+</body>
+</html>
