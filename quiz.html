@@ -2,55 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HTML fun quiz</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>HTML Quiz with Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .question {
+      margin-bottom: 25px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .question h4 {
+      margin-bottom: 10px;
+    }
+
+    .incorrect {
+      background-color: #ffe6e6;
+      border-left: 5px solid red;
+    }
+
+    .correct {
+      background-color: #e6ffe6;
+      border-left: 5px solid green;
+    }
+
+    #timer {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
-  <h1>HTML quiz</h1>
-  <p id="timer">Time left: 60s</p>
 
-  <form id="quiz-form">
-    <label for="q1">1.What's the full meaning of HTML  ?</label><br>
-    <input type="text" id="q1" name="q1"><br><br>
+  <h1>FUN QUIZ</h1>
+  <div id="timer">Time left: 2:00</div>
+  <br>
+  <h3>HTML quiz</h3>
+  <form id="quizForm">
+    <div class="question" id="q1">
+      <h4>1. What does HTML stand for?</h4>
+      <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label><br>
+      <label><input type="radio" name="q1" value="b"> Hyperlinks and Text Markup Language</label><br>
+      <label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label><br>
+      <label><input type="radio" name="q1" value="d"> Hyper Text Markdown Language</label>
+    </div>
 
-    <label for="q2">2. A HTML document is divided into how many parts?</label><br>
-    <select id="q2" name="q2">
-      <option value="">--Select--</option>
-      <option value="two parts">two parts</option>
-      <option value="three parts">three parts</option>
-      <option value="four parts">four parts</option>
-      <option value="five parts">five parts</option>
-    </select><br><br>
+    <div class="question" id="q2">
+      <h4>2. All these are importance of HTML <b>exept</b></h4>
+      <label><input type="radio" name="q2" value="a"> Game development</label><br>
+      <label><input type="radio" name="q2" value="b"> Internet navigation</label><br>
+      <label><input type="radio" name="q2" value="c"> Responsive designs</label><br>
+      <label><input type="radio" name="q2" value="d"> Website accessibility</label>
+    </div>
 
-    <label for="q3">3. What is HTML's role in web development?</label><br>
-    <input type="text" id="q3" name="q3"><br><br>
+    <div class="question" id="q3">
+      <h4>3. What tag is used to create a hyperlink?</h4>
+      <label><input type="radio" name="q3" value="a"> &lt;a&gt;</label><br>
+      <label><input type="radio" name="q3" value="b"> &lt;href&gt;</label><br>
+      <label><input type="radio" name="q3" value="c"> &lt;link&gt;</label><br>
+      <label><input type="radio" name="q3" value="d"> &lt;hyperlink&gt;</label>
+    </div>
 
-    <label for="q4">2. A HTML document is divided into how many parts?</label><br>
-    <select id="q4" name="q4">
-      <option value="">--Select--</option>
-      <option value="two parts">two parts</option>
-      <option value="three parts">three parts</option>
-      <option value="four parts">four parts</option>
-      <option value="five parts">five parts</option>
-    </select><br><br>
-      
-    <label for="q4">2. _ should describe the page's content succinctly and accurately</label><br>
-    <select id="q4" name="q4">
-      <option value="">--Select--</option>
-      <option value="HTNL TAG">HTML TAG</option>
-      <option value="HEADER TAGS">HEADER TAGS</option>
-      <option value="TITLE TAG">TITLE TAG</option>
-      <option value="PARAGRAPH TAG">PARAGRAPH TAG</option>
-    </select><br><br>
-      
-    <input type="submit" value="Submit">
+    <div class="question" id="q4">
+      <h4>4. Which tag inserts a line break?</h4>
+      <label><input type="radio" name="q4" value="a"> &lt;break&gt;</label><br>
+      <label><input type="radio" name="q4" value="b"> &lt;br&gt;</label><br>
+      <label><input type="radio" name="q4" value="c"> &lt;lb&gt;</label><br>
+      <label><input type="radio" name="q4" value="d"> &lt;line&gt;</label>
+    </div>
+
+    <div class="question" id="q5">
+      <h4>5. Which tag is used to define a table row?</h4>
+      <label><input type="radio" name="q5" value="a"> &lt;td&gt;</label><br>
+      <label><input type="radio" name="q5" value="b"> &lt;th&gt;</label><br>
+      <label><input type="radio" name="q5" value="c"> &lt;tr&gt;</label><br>
+      <label><input type="radio" name="q5" value="d"> &lt;table&gt;</label>
+    </div>
+    <p> 
+    <h3>CSS QUIZ</h3>
+    <div class="question" id="q6">
+      <h4>6. Which tag makes text bold?</h4>
+      <label><input type="radio" name="q6" value="a"> &lt;b&gt;</label><br>
+      <label><input type="radio" name="q6" value="b"> &lt;strong&gt;</label><br>
+      <label><input type="radio" name="q6" value="c"> &lt;bold&gt;</label><br>
+      <label><input type="radio" name="q6" value="d"> &lt;em&gt;</label>
+    </div>
+
+    <div class="question" id="q7">
+      <h4>7. What is the correct HTML element for inserting a line break?</h4>
+      <label><input type="radio" name="q7" value="a"> &lt;break&gt;</label><br>
+      <label><input type="radio" name="q7" value="b"> &lt;br&gt;</label><br>
+      <label><input type="radio" name="q7" value="c"> &lt;lb&gt;</label><br>
+      <label><input type="radio" name="q7" value="d"> &lt;line&gt;</label>
+    </div>
+
+    <div class="question" id="q8">
+      <h4>8. What does &lt;ul&gt; stand for?</h4>
+      <label><input type="radio" name="q8" value="a"> Unmarked List</label><br>
+      <label><input type="radio" name="q8" value="b"> Unordered List</label><br>
+      <label><input type="radio" name="q8" value="c"> Underlined List</label><br>
+      <label><input type="radio" name="q8" value="d"> Universal List</label>
+    </div>
+
+    <div class="question" id="q9">
+      <h4>9. Which tag defines a list item?</h4>
+      <label><input type="radio" name="q9" value="a"> &lt;li&gt;</label><br>
+      <label><input type="radio" name="q9" value="b"> &lt;ul&gt;</label><br>
+      <label><input type="radio" name="q9" value="c"> &lt;ol&gt;</label><br>
+      <label><input type="radio" name="q9" value="d"> &lt;list&gt;</label>
+    </div>
+
+    <div class="question" id="q10">
+      <h4>10. What is the correct tag for inserting a background color?</h4>
+      <label><input type="radio" name="q10" value="a"> &lt;background&gt;</label><br>
+      <label><input type="radio" name="q10" value="b"> use CSS style="background-color"</label><br>
+      <label><input type="radio" name="q10" value="c"> &lt;bgcolor&gt;</label><br>
+      <label><input type="radio" name="q10" value="d"> &lt;color&gt;</label>
+    </div>
+    <p>
+    <h3>JAVASCRIPT QUIZ</h3>
+    <div class="question" id="q11">
+      <h4>11. Which tag is used for a form in HTML?</h4>
+      <label><input type="radio" name="q11" value="a"> &lt;form&gt;</label><br>
+      <label><input type="radio" name="q11" value="b"> &lt;forms&gt;</label><br>
+      <label><input type="radio" name="q11" value="c"> &lt;input&gt;</label><br>
+      <label><input type="radio" name="q11" value="d"> &lt;textarea&gt;</label>
+    </div>
+
+    <div class="question" id="q12">
+      <h4>12. Which element is used to input data in a form?</h4>
+      <label><input type="radio" name="q12" value="a"> &lt;form&gt;</label><br>
+      <label><input type="radio" name="q12" value="b"> &lt;input&gt;</label><br>
+      <label><input type="radio" name="q12" value="c"> &lt;textarea&gt;</label><br>
+      <label><input type="radio" name="q12" value="d"> &lt;button&gt;</label>
+    </div>
+
+    <div class="question" id="q13">
+      <h4>13. What tag is used to add a table in HTML?</h4>
+      <label><input type="radio" name="q13" value="a"> &lt;table&gt;</label><br>
+      <label><input type="radio" name="q13" value="b"> &lt;tab&gt;</label><br>
+      <label><input type="radio" name="q13" value="c"> &lt;tbl&gt;</label><br>
+      <label><input type="radio" name="q13" value="d"> &lt;data&gt;</label>
+    </div>
+
+    <div class="question" id="q14">
+      <h4>14. Which tag is used to define an unordered list?</h4>
+      <label><input type="radio" name="q14" value="a"> &lt;li&gt;</label><br>
+      <label><input type="radio" name="q14" value="b"> &lt;ul&gt;</label><br>
+      <label><input type="radio" name="q14" value="c"> &lt;ol&gt;</label><br>
+      <label><input type="radio" name="q14" value="d"> &lt;list&gt;</label>
+    </div>
+
+    <div class="question" id="q15">
+      <h4>15. Which tag defines the largest heading?</h4>
+      <label><input type="radio" name="q15" value="a"> &lt;h6&gt;</label><br>
+      <label><input type="radio" name="q15" value="b"> &lt;h4&gt;</label><br>
+      <label><input type="radio" name="q15" value="c"> &lt;h1&gt;</label><br>
+      <label><input type="radio" name="q15" value="d"> &lt;head&gt;</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
   </form>
 
-  <div id="result" class="hidden"></div>
-  <button id="retry-btn" class="hidden">Try Again</button>
+  <div class="result" id="result"></div>
 
-  <!-- Confetti (Optional) -->
-  <script src="confetti.min.js"></script>
-  <script src="script.js"></script>
+  <script>
+    const correctAnswers = {
+      q1: 'a', q2: 'c', q3: 'a', q4: 'b', q5: 'c',
+      q6: 'a', q7: 'b', q8: 'b', q9: 'a', q10: 'b',
+      q11: 'a', q12: 'b', q13: 'a', q14: 'b', q15: 'c'
+    };
+
+    function checkAnswers() {
+      let score = 0;
+      const total = Object.keys(correctAnswers).length;
+      const form = document.getElementById('quizForm');
+
+      for (let q in correctAnswers) {
+        const questionDiv = document.getElementById(q);
+        questionDiv.classList.remove('correct', 'incorrect');
+        const selected = form.elements[q].value;
+        if (selected === correctAnswers[q]) {
+          questionDiv.classList.add('correct');
+          score++;
+        } else {
+          questionDiv.classList.add('incorrect');
+        }
+      }
+
+      document.getElementById('result').textContent =
+        `You got ${score} out of ${total} correct.`;
+    }
+
+    // Timer
+    let time = 120; // 2 minutes
+    const timerDisplay = document.getElementById('timer');
+
+    function updateTimer() {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      timerDisplay.textContent = `Time left: ${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      if (time > 0) {
+        time--;
+      } else {
+        clearInterval(timerInterval);
+        alert("Time's up! Submitting quiz.");
+        checkAnswers();
+      }
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
 </body>
 </html>
